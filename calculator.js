@@ -68,16 +68,29 @@ function SR(x){
         document.getElementById('s').disabled = true;
     }
 }
+function convertNumber(){
+    var base_convert = function(number, initial_base, change_base) {
+        if ((initial_base && change_base) <2 || (initial_base && change_base)>36)
+         return 'Base between 2 and 36';
+        
+         return parseInt(number + '', initial_base)
+         .toString(change_base);
+     }
+     
+    exp = (base_convert(document.getElementById("number").value,document.getElementById("base").value,document.getElementById("base2").value));
+    textview.value = exp.toString(base2)
+
+}
 function radix(){
-    var number = parseInt(document.getElementById("number").value,document.getElementById("base").value);
     var base = document.getElementById("base").value;
+    var number = parseInt(document.getElementById("number").value,base);
     var digits = parseInt(document.getElementById("digits").value, 10);
     exp = Math.pow(base, digits) - number;
     textview.value = exp.toString(base);    
 }
 function diminishedRadix(x){
-    var number = parseInt(document.getElementById("number").value,document.getElementById("base").value);
     var base = document.getElementById("base").value;
+    var number = parseInt(document.getElementById("number").value,base);
     var digits = parseInt(document.getElementById("digits").value, 10);
     exp = (Math.pow(base, digits) - 1) - number;
     textview.value = exp.toString(base);   
