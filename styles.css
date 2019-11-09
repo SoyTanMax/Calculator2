@@ -14,15 +14,19 @@ body{
     display:flex;
     justify-content: center;
     align-items: center;
-    padding-top: 2em;
+}
+form{
     padding-bottom: 1em;
 }
 .table{
     background-color: transparent;
+    padding-left:1.75em;
 }
 h2{
     font-size: 35px;
     color:black;
+    padding-top: 2em;
+    padding-bottom: 1em;
 }
 .input{
     background-color:transparent;
@@ -39,4 +43,11 @@ h2{
     background-color:transparent;
     width: 60px;
     height:50px;
+}
+.columns{
+    justify-content: center;
+}
+.convert{
+    padding-left: 2.25em;
+    padding-bottom: 1em;
 }

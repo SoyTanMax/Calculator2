@@ -68,12 +68,19 @@ function SR(x){
         document.getElementById('s').disabled = true;
     }
 }
-function radix(x){
-    x == 'r';
-    base = document.getElementById("base").value;
-    exp = parseInt(exp, base);
-
-    
+function radix(){
+    var number = parseInt(document.getElementById("number").value,document.getElementById("base").value);
+    var base = document.getElementById("base").value;
+    var digits = parseInt(document.getElementById("digits").value, 10);
+    exp = Math.pow(base, digits) - number;
+    textview.value = exp.toString(base);    
+}
+function diminishedRadix(x){
+    var number = parseInt(document.getElementById("number").value,document.getElementById("base").value);
+    var base = document.getElementById("base").value;
+    var digits = parseInt(document.getElementById("digits").value, 10);
+    exp = (Math.pow(base, digits) - 1) - number;
+    textview.value = exp.toString(base);   
 }
 
 //Dropdown menu on the navbar//
