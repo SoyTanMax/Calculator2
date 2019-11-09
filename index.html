@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+<body>
+    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="array.html"></a>
+        
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            </a>
+        </div>
+        
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-end">
+            <a class="navbar-item" href="array.html">Calculator</a>
+            <a class="navbar-item" href="">Instructions</a>
+        </div>
+    </nav>
+    <h2 class="center">Full Calculator</h2>
+    <form name="myForm">
+        <div class="field">
+            <div class="control center">
+                <input id="number" name="textview" class="input is-primary" type="text" style="width:300px; height: 60px;">
+            </div>
+        </div>
+    </form>
+    <div class="columns">
+        <div class="column ">
+            <div class="table-container">
+                <div class="table">
+                    <tr>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="√" onclick="SR('r')">√</button></td>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="^" onclick="SR('s')">^2</button></td>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="DEL" onclick="del()">DEL</button></td>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="÷" onclick="insertOp('/')">÷</button></td>
+                        <td>
+                            <div class="select is-primary">
+                                <select id="base" style="background-color: transparent;">
+                                    <option value="2">2 (binary)</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8 (octal)</option>
+                                    <option value="9">9</option>
+                                    <option selected="selected" value="10">10 (decimal)</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16 (hexadecimal)</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                    <option value="32">32</option>
+                                    <option value="33">33</option>
+                                    <option value="34">34</option>
+                                    <option value="35">35</option>
+                                    <option value="36">36</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="7" onclick="insertNum(7)">7</button></td>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="8" onclick="insertNum(8)">8</button></td>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="9" onclick="insertNum(9)">9</button></td>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="x" onclick="insertOp('*')">x</button></td>
+                        <td>
+                            <div class="select is-primary">
+                                <select style="background-color: transparent;">
+                                    <option value="2">2 (binary)</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8 (octal)</option>
+                                    <option value="9">9</option>
+                                    <option selected="selected" value="10">10 (decimal)</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16 (hexadecimal)</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                    <option value="32">32</option>
+                                    <option value="33">33</option>
+                                    <option value="34">34</option>
+                                    <option value="35">35</option>
+                                    <option value="36">36</option>
+                                </select>
+                            </div> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="4" onclick="insertNum(4)">4</button></td>
+                        <button class="button is-info is-outlined symbol" type="button" value="5" onclick="insertNum(5)">5</button></td>
+                        <button class="button is-info is-outlined symbol" type="button" value="6" onclick="insertNum(6)">6</button></td>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="-" onclick="insertOp('-')">-</button></td>
+                        <td><input id="digits" name="textview" class="input is-primary" type="text" placeholder="n of digits"></td>
+                    </tr>
+                    <tr>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="1" onclick="insertNum(1)">1</button></td>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="2" onclick="insertNum(2)">2</button></td>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="3" onclick="insertNum(3)">3</button></td>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="+" onclick="insertOp('+')">+</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="button is-primary is-outlined symbol" type="button" value="" onclick="radix('r')">1's</button></td>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="C" onclick="clean()">C</button></td>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="0" onclick="insertNum(0)">0</button></td>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="." onclick="insertDec()">.</button></td>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="=" onclick="equalTo()">=</button></td>
+                        <button class="button is-primary is-outlined symbol" type="button" value="" onclick="">2's</button> 
+                    </tr>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="table-container">
+                <div class="">
+                    <tr>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="A" onclick="insertNum('A')">A</button></td>                      <td><button class="button is-info is-outlined symbol" type="button" value="B" onclick="insertNum('B')">B</button></td>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="C" onclick="insertNum('C')">C</button></td> 
+                        <td><button class="button is-info is-outlined symbol" type="button" value="D" onclick="insertNum('D')">D</button></td>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="E" onclick="insertNum('E')">E</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="F" onclick="insertNum('F')">F</button></td>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="G" onclick="insertNum('G')">G</button></td>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="H" onclick="insertNum('H')">H</button></td>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="I" onclick="insertNum('I')">I</button></td>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="J" onclick="insertNum('J')">J</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="K" onclick="insertNum('K')">K</button></td>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="L" onclick="insertNum('L')">L</button></td>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="M" onclick="insertNum('M')">M</button></td>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="N" onclick="insertNum('N')">N</button></td>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="O" onclick="insertNum('O')">O</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="P" onclick="insertNum('P')">P</button></td>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="Q" onclick="insertNum('Q')">Q</button></td>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="R" onclick="insertNum('R')">R</button></td>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="S" onclick="insertNum('S')">S</button></td>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="T" onclick="insertNum('T')">T</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="U" onclick="insertNum('U')">U</button></td>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="V" onclick="insertNum('V')">V</button></td>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="W" onclick="insertNum('W')">W</button></td>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="X" onclick="insertNum('X')">X</button></td>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="Y" onclick="insertNum('Y')">Y</button></td>
+                        <td><button class="button is-info is-outlined symbol" type="button" value="Z" onclick="insertNum('Z')">Z</button></td>
+                    </tr>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./calculator.js" type="text/JavaScript"></script>
+</body>
+</html>
