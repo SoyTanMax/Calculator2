@@ -81,6 +81,12 @@ function SR(x){
 function convertNumber(){
     var base = document.getElementById("base").value;
     var base2 = document.getElementById("base2").value;
+    var number = parseInt(document.getElementById("number").value, base);
+    textview.value = number.toString(base2)
+}
+function convertDecimal(){
+    var base = document.getElementById("base").value;
+    var base2 = document.getElementById("base2").value;
     var number = parseFloat(document.getElementById("number").value, base);
     textview.value = number.toString(base2)
 }
