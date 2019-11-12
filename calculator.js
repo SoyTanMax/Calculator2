@@ -1,3 +1,13 @@
+//Dropdown menu on the navbar//
+(function() {
+    var burger = document.querySelector('.burger');
+    var nav = document.querySelector('#'+burger.dataset.target);
+    burger.addEventListener('click', function(){
+        burger.classList.toggle('is-active');
+        nav.classList.toggle('is-active');
+    });   
+})();
+//Calculator functions
 var exp = "", number,decimal,equal,operator,allowSr = true;
 var textview = document.forms['myForm']['textview'];
 function insertNum(num){
@@ -71,7 +81,7 @@ function SR(x){
 function convertNumber(){
     var base = document.getElementById("base").value;
     var base2 = document.getElementById("base2").value;
-    var number = parseInt(document.getElementById("number").value, base);
+    var number = parseFloat(document.getElementById("number").value, base);
     textview.value = number.toString(base2)
 }
 function radix(){
@@ -88,14 +98,22 @@ function diminishedRadix(x){
     exp = (Math.pow(base, digits) - 1) - number;
     textview.value = exp.toString(base);   
 }
+function addNumber(){
+    base = document.getElementById("base").value;
+    base2 = document.getElementById("base2").value;
+    base3 = document.getElementById("base3").value;
+    var number = parseInt(document.getElementById("number").value, base);
+    var number2 = parseInt(document.getElementById("number2").value,document.getElementById("base2").value);
+    var result = (number + number2).toString(base3);
+    textview.value = result;
+}
 
-//Dropdown menu on the navbar//
-
-(function() {
-    var burger = document.querySelector('.burger');
-    var nav = document.querySelector('#'+burger.dataset.target);
-    burger.addEventListener('click', function(){
-        burger.classList.toggle('is-active');
-        nav.classList.toggle('is-active');
-    });   
-})();
+function subtractNumber(){
+    base = document.getElementById("base").value;
+    base2 = document.getElementById("base2").value;
+    base3 = document.getElementById("base3").value;
+    var number = parseInt(document.getElementById("number").value, base);
+    var number2 = parseInt(document.getElementById("number2").value,document.getElementById("base2").value);
+    var result = (number - number2).toString(base3);
+    textview.value = result;
+}

@@ -42,6 +42,12 @@
             </div>
         </div>
     </form>
+    <form name="myForm">
+        <div class="field">
+            <div class="control center">
+                <input id="number2" name="textview" class="input" style="color:white; width:300px;" type="text" value="Second number of different base">
+        </div>
+    </form><br>
     <!--Calculator-->
     <div class="columns">
         <div class="column"></div>
@@ -77,7 +83,15 @@
                     
                 </div>
                 <div class="column is-2">
-                    <div class="select center is-primary is-rounded" style="height:50px;">
+                    <button class="button is-primary is-rounded" type="button" value="" onclick="diminishedRadix()">1's</button>
+                    <button class="button is-primary is-rounded" type="button" value="" onclick="radix()">2's</button>
+                    <button class="button is-primary is-rounded" type="button" value="" onclick="addNumber()">Add<br>Base</button>
+                    <button class="button is-primary is-rounded" type="button" value="" onclick="subtractNumber()">Sub<br>Base</button>
+                </div>
+            </div>
+            <div class="columns is-mobile">
+                <div class="column is-2">
+                    <div class="select center is-primary is-rounded" style="width:90px; height:50px;">
                         <select class="center" id="base" style="background-color: transparent; height:50px;">
                             <option value="2">2 (binary)</option>
                             <option value="3">3</option>
@@ -116,7 +130,9 @@
                             <option value="36">36</option>
                         </select>
                     </div>
-                    <div class="select center is-primary is-rounded" style="height:50px;">
+                </div>
+                <div class="column is-2">
+                    <div class="select center is-primary is-rounded" style="width:90px; height:50px;">
                         <select class="center" id="base2" style="background-color: transparent; height:50px;">
                             <option value="2">2 (binary)</option>
                             <option value="3">3</option>
@@ -155,13 +171,56 @@
                             <option value="36">36</option>
                         </select>
                     </div> 
-                    <input id="digits" name="textview" class="input is-primary is-rounded" style="color:turquoise;" type="text" placeholder="n of digits">
-                    <button class="button is-primary is-rounded" type="button" value="" onclick="diminishedRadix()">1's</button>
-                    <button class="button is-primary is-rounded" type="button" value="" onclick="radix()">2's</button>
                 </div>
-            </div>
-            <div class="convert center">
-                <button class="button is-primary is-rounded center" type="button" style="width:300px;" onclick="convertNumber()">Convert Base</button>
+                <div class="column is-2">
+                    <div class="select center is-primary is-rounded" style="width:90px; height:50px;">
+                        <select class="center" id="base3" style="background-color: transparent; height:50px;">
+                            <option value="2">2 (binary)</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8 (octal)</option>
+                            <option value="9">9</option>
+                            <option selected="selected" value="10">10 (decimal)</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16 (hexadecimal)</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                            <option value="32">32</option>
+                            <option value="33">33</option>
+                            <option value="34">34</option>
+                            <option value="35">35</option>
+                            <option value="36">36</option>
+                        </select>
+                    </div> 
+                </div>
+                <div class="column is-2">
+                    <input id="digits" name="textview" class="input is-primary is-rounded" style="color:turquoise;" type="text" placeholder="n of digits">
+                </div>
+                <div class="column center is-2">
+                    <div class="convert">
+                        <button class="button is-primary is-rounded" style="width: 90px; height:50px;" type="button" onclick="convertNumber()">Convert<br>Base</button>
+                    </div>
+                </div>   
             </div>
             <div class="columns is-mobile">
                 <div class="column is-2">
