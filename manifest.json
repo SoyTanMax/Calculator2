@@ -3,7 +3,7 @@
   "short_name": "Calc",
   "theme_color": "#000000",
   "background_color": "#000000",
-  "display": "browser",
+  "display": "standalone",
   "Scope": "/",
   "start_url": "/",
   "icons": [
