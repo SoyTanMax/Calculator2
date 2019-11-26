@@ -1,3 +1,5 @@
+//Maximiliano López Fuentes/
+
 //Dropdown menu on the navbar//
 (function() {
     var burger = document.querySelector('.burger');
